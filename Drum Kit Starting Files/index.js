@@ -13,6 +13,7 @@ var audiol = new Audio('sounds/kick-bass.mp3');
 //key down event added 8/06/2022
 //detecting key pressed
 document.addEventListener("keydown",respondToKey);
+
 function respondToKey(event) {
 
 		switch(event.key){
@@ -53,8 +54,8 @@ function respondToKey(event) {
 }
 
 //detecting window button
-for(n=0;n<=document.querySelectorAll(".drum").length;n++){
-	document.querySelectorAll(".drum")[n].addEventListener("click",buttonClick);
+for(n=0; n<=document.querySelectorAll(".drum").length; n++){
+	document.querySelectorAll(".drum")[n].addEventListener("click", buttonClick);
 }
 
 
@@ -149,53 +150,17 @@ function buttonAnimation(currentKey) {
 
     //the button we want to change the style
     var activeButton = document.querySelector("." + currentKey);
+
     activeButton.classList.add("pressed");
+
+    setTimeOut(function(){
+
+    activeButton.classList.remove("pressed");
+
+    },100);
+
 }
 
 
 
-// 8/06/2022
-//Constructor Function (function name needs to be capitalised)
-
-function BellBoy(name,age,hasWorkPermit,language){
-	this.name=name;
-	this.age=age;
-	this.hasWorkPermit=hasWorkPermit;
-	this.language=language;
-	
-	//including a function
-	this.moveSuitcase=function(){
-		alert("May I take your suitcase?");
-		pickUpSuitcase();
-		move();
-		
-	}
-	
-}
-
-//Initialise Objects:
-var bellBoy1 = new BellBoy("Timmy",19,true,["Chinese","English"]);
-
-//using the function in constructor function
-//bellBoy1.moveSuitcase();
-
-
-
-
-//Creating a housekeeper constructor function
-
-function HouseKeeper(name, yearsOfExp, cleaningRepertoire){
-	
-	this.name=name;
-	this.yearsOfExp=yearsOfExp;
-	this.cleaningRepertoire=cleaningRepertoire;
-	this.cleaning=function(){
-		alert("Cleaning starts");
-		
-	}
-}
-//creating a new housekeeper obj
-var housekeeper1=new HouseKeeper("Fiona", 5, ["Rooms","dirty rooms"]);
-///console.log(housekeeper1.name);
-//housekeeper1.cleaning();
 
