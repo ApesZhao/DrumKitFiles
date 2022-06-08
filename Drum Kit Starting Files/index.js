@@ -17,53 +17,119 @@ for(n=0;n<=document.querySelectorAll(".drum").length;n++){
 
 function buttonClick(){
 
-var buttonText=this.innerHTML;
-
+//7/06/2022
+//var buttonText=this.innerHTML;
+/*
 	if (buttonText=="w"){
-		//document.querySelector(".w").addEventListener("click",audiow.play());
+		
 		this.style.color="white";
 		audiow.play();
 	}
 
 	else if (buttonText=="a"){
-		//document.querySelector(".a").addEventListener("click",audioa.play());
+		
+		this.style.color="white";
 		audiow.play();
+		
 	}
 	
 	else if (buttonText=="s"){
-		//document.querySelector(".s").addEventListener("click",audios.play());
+		
+		this.style.color="white";
 		audios.play();
 	}
 	else if (buttonText=="d"){
-		//document.querySelector(".d").addEventListener("click",audiod.play());
+		
+		this.style.color="white";
 		audiod.play();
 	}
 
 	else if (buttonText=="j"){
-		//document.querySelector(".j").addEventListener("click",audioj.play());
+		
+		this.style.color="white";
 		audioj.play();
 	}
 
 	else if (buttonText=="k"){
-		//document.querySelector(".a").addEventListener("click",audiok.play());
+		
+		this.style.color="white";
 		audiok.play();
 	}
 
 
 	else {
-		//document.querySelector(".l").addEventListener("click",audiol.play());
+		
+		this.style.color="white";
 		audiol.play();
 	}
+*/
 
+//8/06/2022 using switch for different cases
+	switch	(this.innerHTML){
+		case "w":
+		audiow.play();
+		break;
+		
+		case "a":
+		audioa.play();
+		break;
+				
+		case "s":
+		audios.play();
+		break;
+		
+		case "d":
+		audiod.play();
+		break;
+		
+		case "j":
+		audioj.play();
+		break;
+		
+		case "k":
+		audiok.play();
+		break;
+		
+		case "l":
+		audiol.play();
+		break;
+		
+		default:
+		alert(this.innerHTML);
+		
+	}
+	
+	
 }
 
 
 
+// 8/06/2022
+//Constructor Function (function name needs to be capitalised)
+
+function BellBoy(name,age,hasWorkPermit,language){
+	this.name=name;
+	this.age=age;
+	this.hasWorkPermit=hasWorkPermit;
+	this.language=language;
+	
+}
+
+//Initialise Objects:
+var bellBoy1 = new BellBoy("Timmy",19,true,["Chinese","English"]);
 
 
+//Creating a housekeeper constructor function
 
-
-
+function HouseKeeper(name, yearsOfExp, cleaningRepertoire){
+	
+	this.name=name;
+	this.yearsOfExp=yearsOfExp;
+	this.cleaningRepertoire=cleaningRepertoire;
+}
+//creating a new housekeeper obj
+var housekeeper1=new HouseKeeper("Fiona", 5, ["Rooms","dirty rooms"]);
+console.log(housekeeper1.name);
 
 // Calculator function, function inside function
 
@@ -89,4 +155,6 @@ function divide(num1,num2){
 function calculator(num1,num2,operator){
 	
 	return operator(num1,num2);
+}
+;
 }
