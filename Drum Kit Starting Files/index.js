@@ -153,7 +153,7 @@ function buttonAnimation(currentKey) {
 
     activeButton.classList.add("pressed");
 
-    setTimeOut(function(){
+    setTimeout(function(){
 
     activeButton.classList.remove("pressed");
 
